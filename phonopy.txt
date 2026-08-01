@@ -13,3 +13,8 @@ phonopy-load --band "0.0 0.0 0.0  0.5 0.0 0.0  0.5 0.5 0.0  0.0 0.0 0.0  0.5 0.5
 
 phonopy-vasp-efe vasprun.xml-{-{2..1},{0..2}}
 phonopy-qha e-v.dat thermal_properties.yaml-{-{2..1},{0..2}} --sparse=10 -p
+
+
+#phonopy band.yml to band.dat
+phonopy-bandplot --gnuplot band.yaml>band.dat
+phonopy --dim="2 2 2" --readfc --fc-symmetry --band "0.5 0.5 0.0  0.5 0.5 0.5  0.0 0.0 0.0  0.5 0.5 0.0" --band-labels "M R G M" --band-format yaml -p
